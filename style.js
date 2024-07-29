@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const instagramHandle = document.getElementById('instagram-handle');
 
     // Handle profile picture upload
-    uploadBtn.addEventListener('click', () => {
+    uploadBtn.addEventListener('click', (event) => {
+        event.preventDefault();
         uploadPic.click();
     });
 
@@ -22,10 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle Instagram handle edit
-    editHandleBtn.addEventListener('click', () => {
+    editHandleBtn.addEventListener('click', (event) => {
+        event.preventDefault();
         const newHandle = prompt('Enter your new Instagram handle:', instagramHandle.textContent);
         if (newHandle) {
             instagramHandle.textContent = newHandle;
         }
     });
 });
+
